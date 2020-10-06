@@ -1,11 +1,18 @@
 /*🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️ Task 1: Warm-up! 🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️*/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
-
+let votingAge;
+if (votingAge>18){
+  console.log(true)
+}
 
 
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+
+let variableA="yes"
+let variableB=1
+if(variableB=1){let variableA="no";}
 
 
 
@@ -14,14 +21,16 @@
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
 
-
+(Number("1999"))
 
 
 //Task d: Write a function to multiply a*b 
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a,b){
+  return a*b;
   }
+
+  
 
 
 
@@ -29,8 +38,8 @@ function multiply(/*add your code here*/){
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(a){
+  return(a*7)
 }
 
 
@@ -54,9 +63,22 @@ function dogYears(/*add your code here*/){
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
-  }
+function hungryDog(w,a){
+    if(a>.999){
+      if (w<5.1){return(w*.05)}
+      else if (w<10.1){return(w*.04)}
+      else if (w<15.1){return(w*.03)}
+      else if (w>15.1){return(w*.02)}
+    }
+    else if (a<.999){
+      if (a>6.9){return(w*.04)}
+      else if (a>3.9){return(w*.05)}
+      else if (a>1.9){return(w*.10)}
+      }
+      return (hungryDog(15,1))
+      console.log(hungryDog(15,1))
+    }
+  
 
 
 
@@ -68,9 +90,21 @@ function hungryDog(/*add your code here*/){
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
 
-function game(/*add your code here*/){
-    /*add your code here*/
+function game(rpc){
+  if (rpc==="rock"){var choice=0}
+  else if (rpc==="paper"){var choice=1}
+  else if (rpc==="scissors"){var choice=2}
+  var computer=Math.floor((Math.random()*3))
+    if(choice===computer){return("it's a tie")}
+    else if (choice===0 && computer===1){return("you lose!")}
+    else if (choice===0 && computer===2){return("you win!")}
+    else if (choice===1 && computer===0){return("you win!")}
+    else if (choice===1 && computer===2){return("you lose!")}
+    else if (choice===2 && computer===0){return("you lose!")}
+    else if (choice===2 && computer===1){return ("you win!")}
+
 }
+
   
   
 
@@ -78,9 +112,10 @@ function game(/*add your code here*/){
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(km){
+    return(km*0.621371)
   }
+  
 
 
 
@@ -89,8 +124,8 @@ function miles(/*add your code here*/){
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(f){
+    return(f*30.48)
   }
  
 
@@ -101,9 +136,15 @@ function feet(/*add your code here*/){
 // the function should take a starting number as an argument and count down - at each iteration it should return (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
+function annoyingSong(s){
+  for(let i=s;i>0;i--){
+    
+    console.log(i+" bottles of soda on the wall "+i+" bottles of soda, take one down pass it around "+ (i-1) +" bottles of soda on the wall")
+    if(i===1){return(i+" bottles of soda on the wall "+i+" bottles of soda, take one down pass it around "+ (i-1) +" bottles of soda on the wall")}
+    }
+
+}
+annoyingSong(5)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -115,8 +156,12 @@ function annoyingSong(/*add your code here*/){
 //60s should be D 
 //and anything below 60 should be F
   
-function grade(/*add your code here*/){
-    /*add your code here*/
+function grade(g){
+  if(g>89){return("A")}
+  else if(g>79){return("B")}
+  else if(g>69){return("C")}
+  else if(g>59){return("D")}
+  else{return("F")}
   }
   
   
